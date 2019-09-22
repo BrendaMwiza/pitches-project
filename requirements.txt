@@ -7,7 +7,7 @@ cffi==1.12.3
 chardet==3.0.4
 Click==7.0
 colorama==0.3.7
-cryptography==2.1.4
+
 dominate==2.4.0
 enum34==1.1.6
 Flask==1.1.1
@@ -39,13 +39,13 @@ psycopg2==2.8.3
 pyasn1==0.4.7
 pyasn1-modules==0.2.6
 pycparser==2.19
-pycrypto==2.6.1
+
 pygobject==3.26.1
 pyinotify==0.9.6
 pyOpenSSL==19.0.0
 python-dateutil==2.8.0
 python-editor==1.0.4
-pyxdg==0.25
+
 requests==2.22.0
 requests-oauthlib==1.2.0
 rsa==4.0
