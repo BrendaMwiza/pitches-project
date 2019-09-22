@@ -39,12 +39,11 @@ class Pitch(db.Model):
     __tablename__ = 'pitches'
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(255))
-#     content = db.Column(db.String)
-#     category = db.Column(db.Integer, db.ForeignKey('categories.id'))
-#     vote = db.Column(db.Integer)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-#     comments = db.relationship('Comment', backref = 'pitches', lazy = "dynamic")
-#     votes = db.relationship('Vote', backref = 'pitches', lazy = "dynamic")
+    contents = db.Column(db.String)
+    category = db.Column(db.Integer, db.ForeignKey('categories.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    comment = db.relationship('Comment', backref = 'pitches', lazy = "dynamic")
+    votes = db.relationship('Vote', backref = 'pitches', lazy = "dynamic")
 
     def save_pitch(self):
         db.session.add(self)
