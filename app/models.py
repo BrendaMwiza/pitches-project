@@ -60,19 +60,19 @@ class Pitch(db.Model):
         return pitches
 
 
-# class Category(db.Model):
-#     __tablename__ = 'categories'
-#     id = db.Column(db.Integer, primary_key = True)
-#     name = db.Column(db.String)
+class Category(db.Model):
+    __tablename__ = 'categories'
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String)
 
-#     def save_category(self):
-#         db.session.add(self)
-#         db.session.commit()
+    def save_category(self):
+        db.session.add(self)
+        db.session.commit()
 
-#     @classmethod
-#     def get_categories(cls):
-#         categories = Category.query.all()
-#         return categories
+    @classmethod
+    def get_categories(cls):
+        categories = Category.query.all()
+        return categories
 
 # class Comment(db.Model):
 #     __tablename__ = 'comments'
