@@ -93,22 +93,22 @@ class Comment(db.Model):
         comment = Comments.query.order_by(Comments.time_posted.desc()).filter_by(pitches_id=id).all()
         return comment
 
+# Votes class
+class Vote(db.Model):
+    __tablename__ = 'votes'
+    id = db.Column(db.Integer, primary_key = True)
+    vote = db.Column(db.Integer)
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
+    comment_id = db.Column(db.Integer, db.ForeignKey('comments.id'))
 
-# class Vote(db.Model):
-#     __tablename__ = 'votes'
-#     id = db.Column(db.Integer, primary_key = True)
-#     vote = db.Column(db.Integer)
-#     pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
-#     comment_id = db.Column(db.Integer, db.ForeignKey('comments.id'))
+    def save_vote(self):
+        db.session.add(self)
+        db.session.commit()
 
-#     def save_vote(self):
-#         db.session.add(self)
-#         db.session.commit()
-
-#     @classmethod
-#     def get_votes(cls,user_id,pitches_id):
-#         votes = Vote.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
-#         return votes
+    @classmethod
+    def get_votes(cls,user_id,pitches_id):
+        votes = Vote.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
+        return votes
 
 
 # class PhotoProfile(db.Model):
