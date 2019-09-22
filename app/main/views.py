@@ -42,8 +42,6 @@ def category(id):
     category_ = Category.query.get(id)
     pitches = Pitch.query.filter_by(category=category_.id).all()
 
-    # pitches=Pitch.get_pitches(id)
-    # title = f'{category.name} page'
     return render_template('category.html', pitches=pitches, category=category_)
 
 #Route for adding a new pitch
@@ -79,11 +77,10 @@ def view_pitch(id):
 
     print(id)
     pitches = Pitch.query.get(id)
-    # pitches = P 2itch.query.filter_by(id=id).all()
 
     if pitches is None:
         abort(404)
-    #
+    
     comment = Comments.get_comments(id)
     return render_template('pitch.html', pitches=pitches, comment=comment, category_id=id)
 
