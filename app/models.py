@@ -17,7 +17,7 @@ class User(UserMixin, db.Model):
     comments = db.relationship('Comment', backref = 'user', lazy = "dynamic")
     bio = db.Column(db.String(255))
     password_hash = db.Column(db.String(255))
-    # profile_pic_path = db.Column(db.String(100))
+    profile_pic_path = db.Column(db.String(100))
     # photoprofiles = db.relationship('PhotoProfile', backref = 'user', lazy = 'dynamic')
 
     @property
