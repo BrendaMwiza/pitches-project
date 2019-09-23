@@ -6,18 +6,18 @@ class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])
     submit = SubmitField('Submit')
 
-# #Pitch Form
-# class PitchForm(FlaskForm):
-#     content = TextAreaField('Post Your Pitch')
-#     submit = SubmitField('Submit Pitch')
+#Pitch Form
+class PitchForm(FlaskForm):
+    content = TextAreaField('Post Your Pitch')
+    submit = SubmitField('Submit Pitch')
 
-# #Comment Form
-# class CommentForm(FlaskForm):
-#     comment = TextAreaField('Comment', validators=[Required()])
-#     submit = SubmitField()
-#     vote=RadioField('default field arguments', choices=[('1', 'UpVote'), ('1', 'DownVote')])
+#Comment Form
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Comment', validators=[Required()])
+    submit = SubmitField()
+    vote=RadioField('default field arguments', choices=[('1', 'UpVote'), ('1', 'DownVote')])
 
-# #categoryForm
-# class CategoryForm(FlaskForm):
-#     name = TextAreaField('Category')
-#     submit = SubmitField()
+#categoryForm
+class CategoryForm(FlaskForm):
+    name = TextAreaField('Category')
+    submit = SubmitField()
