@@ -5,7 +5,7 @@ class Config:
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://username:password@localhost/pitches'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://mwiza:mwiza@localhost/pitch'
 class DevConfig(Config):
     DEBUG = True
 
