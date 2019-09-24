@@ -5,7 +5,8 @@ from app.models import User, Pitch
 from flask_migrate import Migrate, MigrateCommand
 
 # Creating app instance
-app = kora_app('development')
+# app = kora_app('development')
+app = kora_app('production')
 
 manager = Manager(app)
 manager.add_command('server',Server)
