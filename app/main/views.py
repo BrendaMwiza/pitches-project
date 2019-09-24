@@ -11,12 +11,12 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-
+    category=Category.query.all()
+ 
    
-    category = Category.get_categories()
+    
 
-
-    return render_template('index.html',  category = category)
+    return render_template('index.html',category=category  )
 
 @main.route('/add/category', methods=['GET','POST'])
 @login_required
