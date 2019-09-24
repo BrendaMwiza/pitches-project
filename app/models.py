@@ -39,7 +39,7 @@ class Pitch(db.Model):
     __tablename__ = 'pitches'
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(255))
-    contents = db.Column(db.String)
+    content = db.Column(db.String)
     category = db.Column(db.Integer, db.ForeignKey('categories.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comment = db.relationship('Comment', backref = 'pitches', lazy = "dynamic")
@@ -111,8 +111,8 @@ class Vote(db.Model):
         return votes
 
 
-# class PhotoProfile(db.Model):
-#     __tablename__ = 'photoprofiles'
-#     id = db.Column(db.Integer, primary_key = True)
-#     pic_path = db.Column(db.String())
-#     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+class PhotoProfile(db.Model):
+    __tablename__ = 'photoprofiles'
+    id = db.Column(db.Integer, primary_key = True)
+    pic_path = db.Column(db.String())
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
