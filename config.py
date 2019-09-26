@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = 'isimbi'
-    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    UPLOADED_PHOTOS_DEST ='app/static/images'
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -12,8 +12,13 @@ class Config:
 
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    pass
+
 class DevConfig(Config):
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://mwiza:mwiza@localhost/pitch'
+
+    
     DEBUG = True
 
 config_options = {
